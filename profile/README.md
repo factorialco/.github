@@ -5,7 +5,8 @@ We provide intuitive HR solutions that automate and centralize administrative ta
 
 ## Get in touch!
 
-Learn more about what we're doing and our approach to Engineering at [labs.factorialhr.com](https://labs.factorialhr.com).
-:man_technologist: Looking for a job? We are hiring! Check out our open positions at [careers.factorialhr.com/](https://careers.factorialhr.com/).
+:book: Learn more about what we're doing and our approach to Engineering at [labs.factorialhr.com](https://labs.factorialhr.com).
 
-:wave: [in/factorialhr](https://www.linkedin.com/company/factorialhr) [YouTube/@factorialmedia](https://www.youtube.com/@factorialmedia) [factorialhr](https://www.instagram.com/factorial) 
+👨‍💻 Looking for a job? We are hiring! Check out our open positions at [careers.factorialhr.com/](https://careers.factorialhr.com/).
+
+:link: [in/factorialhr](https://www.linkedin.com/company/factorialhr) | [YouTube/@factorialmedia](https://www.youtube.com/@factorialmedia) | [instagram/factorialhr](https://www.instagram.com/factorial) 
