@@ -2,7 +2,7 @@ Thanks for helping make Factorial safe for everyone.
 
 ## Security
 
-Factorial takes the security of our software products and services seriously, including all of the open source code repositories managed through our GitHub organizations, such as [GitHub](https://github.com/factorialco).
+Factorial takes the security of our software products and services seriously, including all of the open source code repositories managed through our GitHub organizations, such as [factorialco](https://github.com/factorialco).
 
 We will ensure that your finding gets passed along to the appropriate maintainers for remediation.
 
