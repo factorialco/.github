@@ -12,4 +12,4 @@
 
 ## 📸 Visual proof
 
-[visual]: # (✍️ _Add screenshots or videos or here._)
+[visual]: # (✍️ _Add screenshots or videos here._)
