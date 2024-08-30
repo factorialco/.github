@@ -8,8 +8,7 @@
 
 ## 🏡 Context
 
-[context]: # (✍️ _Add the actual links for 💼 **Jira** issues, 📖 **Notion** and 🎨 **Figma** documents, links to related 💻 pull requests, and any other links that might help reviewers get some context on your pull request._)
-
-## 📸 Visual proof
-
-[visual]: # (✍️ _Add screenshots or videos here._)
+- [💼 Jira](_jira_link_)
+- [📖 Notion](_notion_link_)
+- [🎨 Figma](_figma_link_)
+- [💻 Other PR](_github_link_)
