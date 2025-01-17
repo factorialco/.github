@@ -1,0 +1,58 @@
+name: Update K8s Deployment
+description: Updates a Kubernetes deployment file in an infrastructure repository with a new image tag
+
+inputs:
+  infra-repo:
+    description: 'Infrastructure repository name'
+    required: true
+  infra-repo-pat:
+    description: 'PAT token for infrastructure repository access'
+    required: true
+  ecr-repository:
+    description: 'ECR repository URL'
+    required: true
+  image-tag:
+    description: 'Docker image tag to deploy'
+    required: true
+  deployment-path:
+    description: 'Path to the deployment file in infrastructure repository'
+    required: true
+  infra-branch:
+    description: 'Branch to checkout in infrastructure repository'
+    default: 'master'
+    required: false
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout infrastructure repository
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ inputs.infra-repo }}
+        ref: ${{ inputs.infra-branch }}
+        token: ${{ inputs.infra-repo-pat }}
+        path: ${{ github.workspace }}/factorial-infrastructure
+        fetch-depth: 1
+
+    - name: Update deployment file
+      uses: mikefarah/yq@v4.45.1
+      shell: bash
+      env:
+        IMAGE_TAG: ${{ inputs.image-tag }}
+      with:
+        cmd: |
+          yq -i '.spec.template.spec.containers[0].image = "${{ inputs.ecr-repository }}:${{ inputs.image-tag }}"' ${{ inputs.deployment-path }}
+          yq -i '.metadata.annotations."kubernetes.io/change-cause" = "${{ inputs.ecr-repository }}:${{ inputs.image-tag }}"' ${{ inputs.deployment-path }}
+
+    - name: Commit and push changes
+      uses: nick-fields/retry@v2
+      with:
+        timeout_minutes: 10
+        max_attempts: 3
+        command: |
+          cd factorial-infrastructure
+          git config --global user.email "factorialco@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
+          git add ${{ inputs.deployment-path }}
+          git commit -m "Update image to ${{ inputs.image-tag }}"
+          git push origin ${{ inputs.infra-branch }}
